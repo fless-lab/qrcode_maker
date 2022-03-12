@@ -1,16 +1,9 @@
 # qrcode_maker
 
-A new Flutter project.
+This is a qrcode generator app.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To generate the qrcode, im using an api running with fastapi which i've created for.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The api is returning the image and the app get and render it
