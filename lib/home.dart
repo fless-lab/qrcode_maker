@@ -102,9 +102,21 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ));
     }
-    return Image.memory(
-      _qrcode,
-      fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: () {
+        //Afficher un toast avec pour message : Pour acceder au menu contextuel, faites un long press.
+      },
+      onLongPress: () => _qrcodeActionMenu(),
+      child: Card(
+        child: Image.memory(
+          _qrcode,
+          fit: BoxFit.cover,
+        ),
+      ),
     );
+  }
+
+  _qrcodeActionMenu() {
+    print("Create an action menu for sharing or saving the qrcode");
   }
 }
