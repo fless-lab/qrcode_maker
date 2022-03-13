@@ -10,16 +10,15 @@ def generateQRcode(link):
     temp = f"qrcodes/{name}"
     myqrcode.save(temp)
     return name
-
-
-
 path = str(os.getcwd())
+
+
 app = FastAPI()
 
 
 @app.get("/")
 def index():
-    return "Bienvenu sur mon api de qrcode !"
+    return "Bienvenu sur mon api, générateur de qrcode !"
 
 @app.get("/get_qrcode")
 def img(name:str):
