@@ -53,6 +53,20 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        mini: true,
+        tooltip: "Rafraichir",
+        onPressed: () {
+          setState(() {
+            controller.clear();
+            _qrcode = null;
+          });
+        },
+        child: Icon(
+          Icons.refresh_outlined,
+          size: 35,
+        ),
+      ),
     );
   }
 
