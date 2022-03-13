@@ -17,6 +17,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   var controller = TextEditingController();
   var _qrcode;
+  String _host = "http://10.0.2.2:8000";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,13 +62,12 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     //Send « to encode » string and get the name of the qrcode
-    final http.Response response = await http.post(
-        Uri.parse("http://10.0.2.2:8000/qrcode"),
-        body: jsonEncode(content));
+    final http.Response response =
+        await http.post(Uri.parse("$_host/qrcode"), body: jsonEncode(content));
     final decodedResponse = json.decode(response.body);
 
     //qrcode final link
-    final _qrcodeURL = "http://10.0.2.2:8000/get_qrcode?name=$decodedResponse";
+    final _qrcodeURL = "$_host/get_qrcode?name=$decodedResponse";
 
     //Build Qrcode
     final ByteData imageData =
