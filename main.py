@@ -2,6 +2,7 @@ from fastapi import Body, FastAPI, HTTPException
 from fastapi.responses import FileResponse
 import qrcode
 import os
+from starlette.responses import RedirectResponse
 from uuid import uuid4
 
 def generateQRcode(link):
@@ -18,7 +19,7 @@ app = FastAPI()
 
 @app.get("/")
 def index():
-    return "Bienvenu sur mon api, générateur de qrcode !"
+    return RedirectResponse("/redoc")
 
 @app.get("/get_qrcode")
 def img(name:str):
